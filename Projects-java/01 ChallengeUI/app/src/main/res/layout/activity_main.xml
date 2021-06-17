@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="15dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/topRelLayout">
+<!--        android:background="@color/grey"-->
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_back_arrow"
+            android:background="@color/grey"
+            android:id="@+id/backArrow"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_settings"
+            android:id="@+id/settings"
+            android:background="@color/grey"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollview01"
+        android:layout_below="@+id/topRelLayout">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/middleRelLayout"
+        android:layout_below="@+id/topRelLayout">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/userDetails"
+            android:layout_marginTop="15dp" >
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/userProfile"
+                android:src="@mipmap/ic_launcher" />
+            
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/nameEdtTxt"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                android:layout_toRightOf="@+id/userProfile"
+                android:layout_marginLeft="10dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/emailEdtTxt"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:layout_toRightOf="@+id/userProfile"
+                android:layout_below="@+id/nameEdtTxt"
+                android:layout_marginLeft="10dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/descriptionRelLayout"
+            android:layout_below="@+id/userDetails"
+            android:layout_marginTop="15dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/descriptionEdtTxt"
+                android:lines="4"
+                android:inputType="textMultiLine"
+                android:hint="Description"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/genderRelLayout"
+            android:layout_below="@+id/descriptionRelLayout"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gender"
+                android:textSize="16sp"
+                android:id="@+id/genderTxt"/>
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/genderRadioGroup"
+                android:orientation="horizontal"
+                android:layout_below="@+id/genderTxt"
+                android:layout_marginTop="7dp"
+                android:layout_centerHorizontal="true">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male"
+                    android:id="@+id/rbMale"/>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female"
+                    android:id="@+id/rbFemale"/>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Other"
+                    android:id="@+id/rbOther"/>
+
+            </RadioGroup>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/countryRelLayout"
+            android:layout_below="@+id/genderRelLayout"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Country: "
+                android:textSize="16sp"
+                android:id="@+id/countryTxt"/>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/countrySpinner"
+                android:layout_below="@+id/countryTxt"
+                android:layout_marginTop="10dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/websiteRelLayout"
+            android:layout_below="@+id/countryRelLayout"
+            android:layout_marginTop="15dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="website"
+                android:inputType="textUri"
+                android:id="@+id/websiteEdtTxt"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:text="Finish"
+                android:id="@+id/btnFinish"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/websiteEdtTxt"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="100dp"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomRelLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/voice"
+            android:background="@color/grey"
+            android:src="@drawable/ic_voice"/>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/cart"
+            android:src="@drawable/ic_cart"
+            android:background="@color/grey"
+            android:layout_toRightOf="@+id/voice"
+            android:layout_marginLeft="20dp"/>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/car"
+            android:src="@drawable/ic_car"
+            android:background="@color/grey"
+            android:layout_toRightOf="@+id/cart"
+            android:layout_marginLeft="20dp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
